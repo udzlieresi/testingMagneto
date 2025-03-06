@@ -25,4 +25,9 @@ public class BasePage
     {
         Find(locator).SendKeys(value);
     }
+
+    public string GetText(By locator)
+    {
+        return Find(locator).Text;
+    }
 }

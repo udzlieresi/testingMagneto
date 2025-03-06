@@ -161,3 +161,4 @@ C:\Users\User.MS26B-2KDV1S\RiderProjects\testingMagneto\testingMagneto\bin\Debug
 C:\Users\User.MS26B-2KDV1S\RiderProjects\testingMagneto\testingMagneto\bin\Debug\net9.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\User.MS26B-2KDV1S\RiderProjects\testingMagneto\testingMagneto\bin\Debug\net9.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\User.MS26B-2KDV1S\RiderProjects\testingMagneto\testingMagneto\bin\Debug\net9.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Users\User.MS26B-2KDV1S\RiderProjects\testingMagneto\testingMagneto\obj\Debug\net9.0\testingMagneto.sourcelink.json

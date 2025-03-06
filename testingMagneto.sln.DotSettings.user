@@ -1,6 +1,19 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ffde5c60_002D65a6_002D4bde_002Da2f1_002D6506a3354dfc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SuccessfulLogIn" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AExceptionDispatchInfo_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003Fa6b7f037ba7b44df80b8d3aa7e58eeb2e8e938_003F4d_003F54a7c9b1_003FExceptionDispatchInfo_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=33a047c8_002Daa0d_002D4815_002Da66d_002D6e8980385f72/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MissedFields #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.MissedFields&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9f42c04b_002D3495_002D46b7_002Da5a1_002D4f0f28a7f842/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="MissedFields" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.InvalidEmail&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.IncorrectPassword&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ffde5c60_002D65a6_002D4bde_002Da2f1_002D6506a3354dfc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="SuccessfulLogIn" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.SuccessfulLogIn&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.MissedFields&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

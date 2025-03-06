@@ -8,7 +8,10 @@ public class AuthenticationPage : BasePage
     private By emailField = By.Id("email");
     private By passwordField = By.Id("pass");
     private By loginButton = By.Id("send2");
-
+    private By forgotPasswordButton = By.XPath("//div[@class='secondary']//span[text()='Forgot Your Password?']");
+    private By emailErrorMessage = By.Id("email-error");
+    private By passwordErrorMessage = By.Id("pass-error");
+    private By pageErrorMessage = By.XPath("//div[@class='page messages']");
     public void SetEmail(string email)
     {
         Set(emailField, email);
@@ -32,8 +35,24 @@ public class AuthenticationPage : BasePage
         return ClickLoginButton();
     }
 
-    public string GetErrorMessageFor()
+    public string GetEmailErrorMessage()
     {
-        return 
+        return GetText(emailErrorMessage);
+    }
+
+    public string GetPasswordErrorMessage()
+    {
+        return GetText(passwordErrorMessage);
+    }
+
+    public string GetPageErrorMessage()
+    {
+        return GetText(pageErrorMessage);
+    }
+
+    public void ClickForgotPasswordButton()
+    {
+        Click(forgotPasswordButton);
+        
     }
 }

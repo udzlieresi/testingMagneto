@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("testingMagneto")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f88583c67c8c5aede6da6797485bf37bc47cf46")]
 [assembly: System.Reflection.AssemblyProductAttribute("testingMagneto")]
 [assembly: System.Reflection.AssemblyTitleAttribute("testingMagneto")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

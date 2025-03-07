@@ -644,6 +644,12 @@
           "buildTransitive/Selenium.WebDriver.targets": {}
         }
       },
+      "Selenium.WebDriver.ChromeDriver/135.0.7049.300-beta": {
+        "type": "package",
+        "build": {
+          "build/Selenium.WebDriver.ChromeDriver.targets": {}
+        }
+      },
       "System.Diagnostics.DiagnosticSource/5.0.0": {
         "type": "package",
         "compile": {
@@ -1505,6 +1511,30 @@
         "selenium.webdriver.nuspec"
       ]
     },
+    "Selenium.WebDriver.ChromeDriver/135.0.7049.300-beta": {
+      "sha512": "5rX8vD3+dn5e61boPVvguHrBOa8CT5jpIOBXBFDFRoYSAREtxZfVJHqL/U7aZYtYwjhMRet1iaJfiF6RBpR84A==",
+      "type": "package",
+      "path": "selenium.webdriver.chromedriver/135.0.7049.300-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "build/DefinePropertiesChromeDriver.targets",
+        "build/Selenium.WebDriver.ChromeDriver.targets",
+        "driver/linux64/LICENSE.chromedriver",
+        "driver/linux64/chromedriver",
+        "driver/mac64/LICENSE.chromedriver",
+        "driver/mac64/chromedriver",
+        "driver/mac64arm/LICENSE.chromedriver",
+        "driver/mac64arm/chromedriver",
+        "driver/win32/LICENSE.chromedriver",
+        "driver/win32/chromedriver.exe",
+        "nupkg-icon.png",
+        "selenium.webdriver.chromedriver.135.0.7049.300-beta.nupkg.sha512",
+        "selenium.webdriver.chromedriver.nuspec"
+      ]
+    },
     "System.Diagnostics.DiagnosticSource/5.0.0": {
       "sha512": "tCQTzPsGZh/A9LhhA6zrqCRV4hOHsK90/G7q3Khxmn6tnB1PuNU0cRaKANP2AWcF9bn0zsuOoZOSrHuJk6oNBA==",
       "type": "package",
@@ -1561,35 +1591,29 @@
       "NUnit >= 4.3.2",
       "NUnit3TestAdapter >= 5.0.0",
       "Selenium.Support >= 4.29.0",
-      "Selenium.WebDriver >= 4.29.0"
+      "Selenium.WebDriver >= 4.29.0",
+      "Selenium.WebDriver.ChromeDriver >= 135.0.7049.300-beta"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User.MS26B-2KDV1S\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/user/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User.MS26B-2KDV1S\\RiderProjects\\testingMagneto\\testingMagneto\\testingMagneto.csproj",
+      "projectUniqueName": "/Users/user/testing/testingMagneto/testingMagneto/testingMagneto.csproj",
       "projectName": "testingMagneto",
-      "projectPath": "C:\\Users\\User.MS26B-2KDV1S\\RiderProjects\\testingMagneto\\testingMagneto\\testingMagneto.csproj",
-      "packagesPath": "C:\\Users\\User.MS26B-2KDV1S\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User.MS26B-2KDV1S\\RiderProjects\\testingMagneto\\testingMagneto\\obj\\",
+      "projectPath": "/Users/user/testing/testingMagneto/testingMagneto/testingMagneto.csproj",
+      "packagesPath": "/Users/user/.nuget/packages/",
+      "outputPath": "/Users/user/testing/testingMagneto/testingMagneto/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User.MS26B-2KDV1S\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/user/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1633,6 +1657,10 @@
           "Selenium.WebDriver": {
             "target": "Package",
             "version": "[4.29.0, )"
+          },
+          "Selenium.WebDriver.ChromeDriver": {
+            "target": "Package",
+            "version": "[135.0.7049.300-beta, )"
           }
         },
         "imports": [
@@ -1651,7 +1679,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

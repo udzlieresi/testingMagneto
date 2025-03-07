@@ -8,21 +8,25 @@ namespace testingMagneto.Tests;
 
 public class BaseTest
 {
-    private IWebDriver driver;
-    private BasePage basePage;
-    private string url =
-        "https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2NyZWF0ZS8%2C/";
+    protected IWebDriver driver;
+    protected BasePage basePage;
+    private string urlAuth =
+        "https://magento.softwaretestingboard.com/customer/account/login/";
+    protected string urlReg =
+        "https://magento.softwaretestingboard.com/customer/account/create/";
     protected AuthenticationPage authPage;
+    protected RegistrationPage regPage;
     
     [SetUp]
-    public void SetUp()
+    public virtual void SetUp()
     {
         driver = new ChromeDriver();
         driver.Manage().Window.Maximize();
-        driver.Navigate().GoToUrl(url);
+        driver.Navigate().GoToUrl(urlAuth);
         basePage = new BasePage();
         basePage.SetDriver(driver);
         authPage = new AuthenticationPage();
+        regPage = new RegistrationPage();
     }
 
     [TearDown]

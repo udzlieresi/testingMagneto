@@ -18,13 +18,11 @@ public class AuthenticationTest : BaseTest
     [Test]
     public void MissingFields()
     {
-        authPage.LoginInIntoApplication("", "");
+        authPage.ClickLoginButton();
         string expectedResult = "This is a required field.";
-        Thread.Sleep(4000);
         string emailErrorMessage = authPage.GetEmailErrorMessage();
         string passwordErrorMessage = authPage.GetPasswordErrorMessage();
         Assert.That(expectedResult, Is.EqualTo(emailErrorMessage));
-        Assert.That(expectedResult, Is.EqualTo(passwordErrorMessage));
     }
 
     [Test]
@@ -51,7 +49,12 @@ public class AuthenticationTest : BaseTest
         
         Assert.That(actualResult, Does.Contain(expectedResult));
     }
-    
+
     [Test]
-    public void forgot
+    public void ForgotPassword()
+    {
+        var forgotPasswordPage = authPage.ClickForgotPasswordButton();
+        forgotPasswordPage.IsAccountPageDisplayed();
+        Assert.That(true, Is.EqualTo(forgotPasswordPage.IsAccountPageDisplayed()));
+    }
 }

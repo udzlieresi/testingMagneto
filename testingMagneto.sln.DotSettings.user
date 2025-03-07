@@ -12,6 +12,9 @@
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.MissingAllFieldsExceptOne&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.InvalidEmail&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.SuccessfulLogIn&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.PasswordStrength&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.PasswordMismatch&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9f42c04b_002D3495_002D46b7_002Da5a1_002D4f0f28a7f842/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MissedFields" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;

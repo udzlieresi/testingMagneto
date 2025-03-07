@@ -16,6 +16,7 @@ public class RegistrationPage : BasePage
     private By passwordError = By.Id("password-error");
     private By confirmPasswordError = By.Id("password-confirmation-error");
     private By createAccountButton = By.XPath("//span[text()='Create an Account']");
+    private By passwordStrength = By.Id("password-strength-meter-label");
     
     public void SetFirstName(string firstName)
     {
@@ -71,9 +72,13 @@ public class RegistrationPage : BasePage
     {
         return GetText(passwordError);
     }
-
     public string GetConfirmPasswordErrorMessage()
     {
         return GetText(confirmPasswordError);
     } 
+    
+    public string GetPasswordStrength()
+    {
+        return GetText(passwordStrength);
+    }
 }

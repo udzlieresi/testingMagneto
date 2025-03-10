@@ -9,7 +9,7 @@
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.MissedFields&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=78c7a293_002D51dc_002D4d09_002Da716_002Dde057a26ee86/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MissingAllFieldsExceptOne #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=78c7a293_002D51dc_002D4d09_002Da716_002Dde057a26ee86/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="MissingAllFieldsExceptOne #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.MissingAllFieldsExceptOne&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.InvalidEmail&lt;/TestId&gt;
@@ -29,7 +29,7 @@
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.MissingFields&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d2563649_002D2dc5_002D4a1b_002D96d7_002D1308c1923d24/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="MissingAllFieldsExceptOne" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d2563649_002D2dc5_002D4a1b_002D96d7_002D1308c1923d24/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MissingAllFieldsExceptOne" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.MissingAllFieldsExceptOne&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.AlreadyRegisteredEmail&lt;/TestId&gt;

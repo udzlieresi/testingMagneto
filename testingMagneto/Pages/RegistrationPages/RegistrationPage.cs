@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using testingMagneto.Base;
+using testingMagneto.Pages.RegistrationPages;
 
 namespace testingMagneto.Pages;
 
@@ -17,7 +18,7 @@ public class RegistrationPage : BasePage
     private By confirmPasswordError = By.Id("password-confirmation-error");
     private By createAccountButton = By.XPath("//span[text()='Create an Account']");
     private By passwordStrength = By.Id("password-strength-meter-label");
-    
+    private By pageErrorMessage = By.Id("//div[@class='page messages']");
     public void SetFirstName(string firstName)
     {
         Set(firstNameField, firstName);
@@ -43,14 +44,20 @@ public class RegistrationPage : BasePage
         Set(confirmPasswordField, password);
     }
 
-    public void ClickCreateAccountButton()
+    public HomePage ClickCreateAccountButton()
     {
         Click(createAccountButton);
+        return new HomePage();
     }
 
-    public void CreateAccount()
+    public HomePage CreateAccount(string firstName, string lastName, string email, string password, string confirmPassword)
     {
-        
+        SetFirstName(firstName);
+        SetLastName(lastName);
+        SetEmail(email);
+        SetPassword(password);
+        SetConfirmPassword(password);
+        return ClickCreateAccountButton();
     }
 
     public string GetFirstNameErrorMessage()
@@ -80,5 +87,15 @@ public class RegistrationPage : BasePage
     public string GetPasswordStrength()
     {
         return GetText(passwordStrength);
+    }
+
+    public IWebElement GetPasswordField()
+    {
+        return Find(passwordField);
+    }
+
+    public string GetPageErrorMessage()
+    {
+        return GetText(pageErrorMessage);
     }
 }

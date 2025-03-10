@@ -1,7 +1,8 @@
 ﻿using OpenQA.Selenium;
 using testingMagneto.Base;
+using testingMagneto.Pages.AuthenticationPages;
 
-namespace testingMagneto.Pages;
+namespace testingMagneto.Pages.AuthenticationPages;
 
 public class AuthenticationPage : BasePage
 {

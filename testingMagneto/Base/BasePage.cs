@@ -11,7 +11,7 @@ public class BasePage
         BasePage.driver = driver;
     }
 
-    public IWebElement Find(By locator)
+    protected IWebElement Find(By locator)
     {
         return driver.FindElement(locator);
     }

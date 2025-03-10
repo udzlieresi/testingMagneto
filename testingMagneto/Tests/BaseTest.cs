@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using testingMagneto.Base;
 using testingMagneto.Pages;
+using testingMagneto.Pages.AuthenticationPages;
 
 namespace testingMagneto.Tests;
 

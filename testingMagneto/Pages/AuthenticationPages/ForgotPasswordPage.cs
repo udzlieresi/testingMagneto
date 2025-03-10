@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
+using testingMagneto.Pages.AuthenticationPages;
 
-namespace testingMagneto.Pages;
+namespace testingMagneto.Pages.AuthenticationPages;
 
 public class ForgotPasswordPage : AuthenticationPage
 {

@@ -1,4 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAssert_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F8613a99658d444bdba9bd0306849b81b79c00_003Fa0_003Fa86f76d9_003FAssert_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAssert_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F182ec85d25b779c7118bca2890ca95ae8dd32868c52272faee4a3a304f624b_003FAssert_002Ecs_002Fz_003A2_002D1/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AExceptionDispatchInfo_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003Fa6b7f037ba7b44df80b8d3aa7e58eeb2e8e938_003F4d_003F54a7c9b1_003FExceptionDispatchInfo_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AExceptionDispatchInfo_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F7963d2beb05f4e73a3774d3a0f11cd7bf82e00_003Fcf_003F281340a6_003FExceptionDispatchInfo_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AExceptionDispatchInfo_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fbf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc_003FExceptionDispatchInfo_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
@@ -7,7 +9,7 @@
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.MissedFields&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=78c7a293_002D51dc_002D4d09_002Da716_002Dde057a26ee86/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="MissingAllFieldsExceptOne #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=78c7a293_002D51dc_002D4d09_002Da716_002Dde057a26ee86/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MissingAllFieldsExceptOne #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.MissingAllFieldsExceptOne&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.InvalidEmail&lt;/TestId&gt;
@@ -27,9 +29,12 @@
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest.MissingFields&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d2563649_002D2dc5_002D4a1b_002D96d7_002D1308c1923d24/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MissingAllFieldsExceptOne" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d2563649_002D2dc5_002D4a1b_002D96d7_002D1308c1923d24/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="MissingAllFieldsExceptOne" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.MissingAllFieldsExceptOne&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest.AlreadyRegisteredEmail&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.AuthenticationTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::0C8DCC4E-E129-4B39-A644-33EB672C639C::net9.0::testingMagneto.Tests.RegistrationTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ffde5c60_002D65a6_002D4bde_002Da2f1_002D6506a3354dfc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="SuccessfulLogIn" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;

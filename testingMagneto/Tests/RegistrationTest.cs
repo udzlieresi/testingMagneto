@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using testingMagneto.Base;
 using testingMagneto.Pages;
+using testingMagneto.Pages.AuthenticationPages;
 
 namespace testingMagneto.Tests;
 
@@ -24,7 +26,6 @@ public class RegistrationTest : BaseTest
         string email = "test@gmail.com";
         
         regPage.SetEmail(email);
-        Thread.Sleep(2000);
         regPage.ClickCreateAccountButton();
         Assert.That(regPage.GetFirstNameErrorMessage(), Is.EqualTo("This is a required field."));
         Assert.That(regPage.GetLastNameErrorMessage(), Is.EqualTo("This is a required field."));
@@ -46,7 +47,6 @@ public class RegistrationTest : BaseTest
     {
         string password = "test1234@";
         regPage.SetPassword(password);
-        Thread.Sleep(2000);
         regPage.ClickCreateAccountButton();
         Assert.That(regPage.GetPasswordStrength(), Does.Contain("Strong"));
     }
@@ -59,7 +59,6 @@ public class RegistrationTest : BaseTest
         
         regPage.SetPassword(password);
         regPage.SetConfirmPassword(confirmPassword);
-        Thread.Sleep(2000);
         regPage.ClickCreateAccountButton();
         Assert.That(regPage.GetConfirmPasswordErrorMessage(), Is.EqualTo("Please enter the same value again."));
     }
@@ -69,8 +68,35 @@ public class RegistrationTest : BaseTest
     {
         string password = "test1234";
         regPage.SetPassword(password);
-        Thread.Sleep(2000);
+        regPage.ClickCreateAccountButton();
+        Assert.That(regPage.GetPasswordErrorMessage(), Does.Contain("Minimum of different classes of characters in password is 3."));
+    }
+
+    [Test]
+    public void MinimumPasswordLength()
+    {
+        string password = "test";
+        regPage.SetPassword(password);
         regPage.ClickCreateAccountButton();
         Assert.That(regPage.GetPasswordErrorMessage(), Does.Contain("Minimum length of this field must be equal or greater than 8 symbols."));
+    }
+
+    [Test]
+    public void PasswordIsHidden()
+    {
+        string password = "test@1234";
+        regPage.SetPassword(password);
+        var passwordField = regPage.GetPasswordField();
+        string passwordFieldType = passwordField.GetAttribute("type");
+        Assert.That(passwordFieldType, Is.EqualTo("password"));
+    }
+
+    [Test]
+    public void AlreadyRegisteredEmail()
+    {
+        regPage.CreateAccount(
+            "test", "test", "shalvasologhashvili21@gmail.com",
+            "test@1234", "test@1234");
+        Assert.That(regPage.GetPageErrorMessage(), Does.Contain("There is already an account with this email address."));
     }
 }

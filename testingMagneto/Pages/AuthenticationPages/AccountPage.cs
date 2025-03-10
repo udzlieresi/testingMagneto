@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace testingMagneto.Pages;
+namespace testingMagneto.Pages.AuthenticationPages;
 
 public class AccountPage : AuthenticationPage
 {

@@ -23,6 +23,7 @@ public class AuthenticationTest : BaseTest
         string emailErrorMessage = authPage.GetEmailErrorMessage();
         string passwordErrorMessage = authPage.GetPasswordErrorMessage();
         Assert.That(expectedResult, Is.EqualTo(emailErrorMessage));
+        Assert.That(passwordErrorMessage, Is.EqualTo(emailErrorMessage));
     }
 
     [Test]

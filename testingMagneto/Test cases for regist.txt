@@ -1,0 +1,132 @@
+Test cases for regist
+
+
+Test case ID:
+TC-01
+Title:
+User can successfully create account with valid credentials.
+Steps:
+1. Navigate to account creation page at:
+https://magento.softwaretestingboard.com/customer/account/create/
+2. Enter data for all fields:
+First Name: test
+Last Name: test
+Email: test@gmail.com
+Password: test1234
+Confirm Password: test1234
+Expected result:
+User is navigated to its profile and success message is displayed.
+
+Test case ID:
+TC-02
+Title:
+For missed fields, the field outline turns red and an error message is displayed.
+Steps:
+1. Navigate to account creation page at:
+https://magento.softwaretestingboard.com/customer/account/create/
+2. Enter data for only email field:
+Email: test@gmail.com
+Expected result:
+Except email field, all field outline turns red and error message "This is a required field." is displayed.
+
+
+Test case ID:
+TC-03
+Title:
+For invalid email address, the field outline turns red and appropriate error message is displayed.
+Steps:
+1. Navigate to account creation page at:
+https://magento.softwaretestingboard.com/customer/account/create/
+2. Enter data for all fields:
+First Name: test
+Last Name: test
+Email: test
+Password: test1234@
+Confirm Password: test1234@
+3. Click create an account button.
+Expected result: 
+The email field outline turns red and an error message "Please enter a valid email address (Ex: johndoe@domain.com)." is displayed below the field.
+
+Test case ID:
+TC-04
+Title:
+An appropriate message is displayed for the password based on its strength.
+Steps:
+1. Navigate to account creation page at:
+https://magento.softwaretestingboard.com/customer/account/create/
+2. Ender data for password field:
+Password: test1234@
+3. Click create an account button.
+Expected result:
+Message, indicating medium password strength, is displayed.
+
+Test case ID:
+TC-05
+Title:
+An appropriate error message is displayed for a password mismatch.
+Steps:
+1. Navigate to account creation page at:
+https://magento.softwaretestingboard.com/customer/account/create/
+2. Enter data for password fields:
+Password: test1234@
+Confirm password: test1234
+3. Click create an account button.
+Expected result:
+Confirm password field outline turns red and message "Please enter the same value again." is displayed.
+
+Test case ID:
+TC-06
+Title:
+For invalid password, field outline turns red and appropriate error message is displayed.
+Steps:
+1. Navigate to account creation page at:
+https://magento.softwaretestingboard.com/customer/account/create/
+2. Enter data for password field:
+Password: test1234
+3. Click create an account button.
+Expected result:
+Password field outline turns red and message "Minimum of different classes of characters in password is 3. Classes of characters: Lower Case, Upper Case, Digits, Special Characters." is displayed.
+
+
+
+Test case ID:
+TC-07
+Title:
+Password is hidden by default.
+Steps:
+1. Navigate to account creation page at:
+https://magento.softwaretestingboard.com/customer/account/create/
+2. Enter data for password field:
+Password: test1234@
+3. Click create an account button.
+Expected result:
+Password text is displayed in dots().
+
+Test case ID:
+TC-08
+Title:
+Error message is displayed if the password length is less than 8 characters.
+Steps:
+1. Navigate to account creation page at:
+https://magento.softwaretestingboard.com/customer/account/create/
+2. Enter data for password field:
+Password: test
+3. Click create an account button.
+Expected result:
+Password field outline turns red and message "Minimum length of this field must be equal or greater than 8 symbols. Leading and trailing spaces will be ignored." is displayed.
+
+Test case ID:
+TC-09
+Title:
+Error message is displayed for already registered email.
+Steps:
+1. Navigate to account creation page at:
+https://magento.softwaretestingboard.com/customer/account/create/
+2. Enter data for all fields:
+First Name: test
+Last Name: test
+Email: shalvasologhashvili21@gmail.com
+Password: test@1234
+Confirm Password: test@1234
+Expected result:
+Error message "There is already an account with this email address." is displayed above the account creation page.

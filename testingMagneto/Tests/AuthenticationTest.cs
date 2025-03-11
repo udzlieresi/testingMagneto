@@ -1,16 +1,17 @@
 ﻿using NUnit.Framework;
-using testingMagneto.Pages;
+using testingMagneto.Pages; // წაშალე იმპორტი თუ არ იყენებ (უბრალოდ კარგი პრაქტიკაა :D)
 
 namespace testingMagneto.Tests;
 
 public class AuthenticationTest : BaseTest
 {
+    // არ მოგერიდოს მეთოდებისთვის გრძელი სახელების დარქმევე. მტავარია კარგად აღწერდეს მეთოდი რას აკეთებს
     [Test]
     public void SuccessfulLogIn()
     {
         string email = "shalvasologhashvili21@gmail.com";
         string password = "test@1234";
-        
+
         var accountPage = authPage.LoginInIntoApplication(email, password);
         Assert.That(accountPage.IsAccountPageDisplayed(), Is.True);
     }
@@ -31,7 +32,7 @@ public class AuthenticationTest : BaseTest
     {
         string email = "test";
         string password = "test1234@";
-        
+
         authPage.LoginInIntoApplication(email, password);
         string expectedResult = "Please enter a valid email address (Ex: johndoe@domain.com).";
         string emailErrorMessage = authPage.GetEmailErrorMessage();
@@ -43,11 +44,11 @@ public class AuthenticationTest : BaseTest
     {
         string email = "shalvasologhashvili21@gmail.com";
         string password = "testtt@1234";
-        
+
         authPage.LoginInIntoApplication(email, password);
         string expectedResult = "The account sign-in was incorrect";
         string actualResult = authPage.GetPageErrorMessage();
-        
+
         Assert.That(actualResult, Does.Contain(expectedResult));
     }
 

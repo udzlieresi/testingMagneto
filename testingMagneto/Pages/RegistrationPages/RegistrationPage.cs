@@ -6,6 +6,9 @@ namespace testingMagneto.Pages;
 
 public class RegistrationPage : BasePage
 {
+    // კონსტრუქტორი გინდა აქ რომელიც დრაივერს გადასცემს სუპერ კლასს
+
+    // ესენი უნდა იყოს რედ ონლი ფროფერთი
     private By firstNameField = By.Id("firstname");
     private By lastNameField = By.Id("lastname");
     private By emailField = By.Id("email_address");
@@ -19,31 +22,38 @@ public class RegistrationPage : BasePage
     private By createAccountButton = By.XPath("//span[text()='Create an Account']");
     private By passwordStrength = By.Id("password-strength-meter-label");
     private By pageErrorMessage = By.XPath("//div[@class='page messages']");
+
+    // ეს მეთოდი არ გჭირდება. და თუ არც იყენებ ამ კლასის გარეთ პრივეტ უნდა იყოს
     public void SetFirstName(string firstName)
     {
         Set(firstNameField, firstName);
     }
 
+    // ეს მეთოდი არ გჭირდება. და თუ არც იყენებ ამ კლასის გარეთ პრივეტ უნდა იყოს
     public void SetLastName(string lastName)
     {
         Set(lastNameField, lastName);
     }
 
+    // ეს მეთოდი არ გჭირდება. და თუ არც იყენებ ამ კლასის გარეთ პრივეტ უნდა იყოს
     public void SetEmail(string email)
     {
         Set(emailField, email);
     }
 
+    // ეს მეთოდი არ გჭირდება. და თუ არც იყენებ ამ კლასის გარეთ პრივეტ უნდა იყოს
     public void SetPassword(string password)
     {
         Set(passwordField, password);
     }
 
+    // ეს მეთოდი არ გჭირდება. და თუ არც იყენებ ამ კლასის გარეთ პრივეტ უნდა იყოს
     public void SetConfirmPassword(string password)
     {
         Set(confirmPasswordField, password);
     }
 
+    // ეს მეთოდი არ გჭირდება. და თუ არც იყენებ ამ კლასის გარეთ პრივეტ უნდა იყოს
     public HomePage ClickCreateAccountButton()
     {
         Click(createAccountButton);
@@ -69,7 +79,7 @@ public class RegistrationPage : BasePage
     {
         return GetText(lastNameError);
     }
-    
+
     public string GetEmailErrorMessage()
     {
         return GetText(emailError);
@@ -82,8 +92,8 @@ public class RegistrationPage : BasePage
     public string GetConfirmPasswordErrorMessage()
     {
         return GetText(confirmPasswordError);
-    } 
-    
+    }
+
     public string GetPasswordStrength()
     {
         return GetText(passwordStrength);

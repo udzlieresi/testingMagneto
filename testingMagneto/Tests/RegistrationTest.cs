@@ -9,6 +9,8 @@ namespace testingMagneto.Tests;
 public class RegistrationTest : BaseTest
 {
     [SetUp]
+    // ეს მეთოდი რეალურად იგივეს აკეთებს რაც ბეიზ ტესტ მეთოდი და ოვერრაიდი არაა საჭირო.
+    // ჩახედე OneTimeSetup და OneTimeTeardown ატრიბუტებს.
     public override void SetUp()
     {
         driver = new ChromeDriver();
@@ -19,11 +21,16 @@ public class RegistrationTest : BaseTest
         authPage = new AuthenticationPage();
         regPage = new RegistrationPage();
     }
+
+
     [Test]
+    // მეთოდებს დაარქვი ისეთი სახელები რომ კარგად აღწერდეს რას აკეთებს
+    // მაგ: TestShouldNotLetUserRegisterWithoutEmail
+    // აღწერს რას აკეთებს ტესტი
     public void MissingAllFieldsExceptOne()
     {
         string email = "test@gmail.com";
-        
+
         regPage.SetEmail(email);
         regPage.ClickCreateAccountButton();
         Assert.That(regPage.GetFirstNameErrorMessage(), Is.EqualTo("This is a required field."));
@@ -33,6 +40,7 @@ public class RegistrationTest : BaseTest
     }
 
     [Test]
+    // იგივე რაც ზევით
     public void InvalidEmail()
     {
         string email = "test";
@@ -42,6 +50,7 @@ public class RegistrationTest : BaseTest
     }
 
     [Test]
+    // იგივე რაც ზევით
     public void PasswordStrength()
     {
         string password = "test1234@";
@@ -51,11 +60,12 @@ public class RegistrationTest : BaseTest
     }
 
     [Test]
+    // იგივე რაც ზევით
     public void PasswordMismatch()
     {
         string password = "test1234@";
         string confirmPassword = "test1234";
-        
+
         regPage.SetPassword(password);
         regPage.SetConfirmPassword(confirmPassword);
         regPage.ClickCreateAccountButton();
@@ -63,6 +73,7 @@ public class RegistrationTest : BaseTest
     }
 
     [Test]
+    // იგივე რაც ზევით
     public void InvalidPassword()
     {
         string password = "test1234";
@@ -72,6 +83,7 @@ public class RegistrationTest : BaseTest
     }
 
     [Test]
+    // იგივე რაც ზევით
     public void MinimumPasswordLength()
     {
         string password = "test";
@@ -81,6 +93,7 @@ public class RegistrationTest : BaseTest
     }
 
     [Test]
+    // იგივე რაც ზევით
     public void PasswordIsHidden()
     {
         string password = "test@1234";
@@ -91,11 +104,13 @@ public class RegistrationTest : BaseTest
     }
 
     [Test]
+    // იგივე რაც ზევით
     public void AlreadyRegisteredEmail()
     {
         regPage.CreateAccount(
             "test", "test", "shalvasologhashvili21@gmail.com",
-            "test@1234", "test@1234");
+            "test@1234", "test@1234");// ლიტერალ ვალიუები არ გადასცეხოლმე მეთოდს. შექმენი ცვლადები, დაარქვი ისეთი სახელი რომ კარგად აღწერდეს მას და ეს ცვლადები გადაეცი მეთოდს.
+                                      //ზევითაც იგივეები გქონდა
         Assert.That(regPage.GetPageErrorMessage(), Does.Contain("There is already an account with this email address."));
     }
 }

@@ -6,8 +6,8 @@ namespace testingMagneto.Pages;
 
 public class RegistrationPage : BasePage
 {
-    private By firstNameField = By.Id("firstName");
-    private By lastNameField = By.Id("lastName");
+    private By firstNameField = By.Id("firstname");
+    private By lastNameField = By.Id("lastname");
     private By emailField = By.Id("email_address");
     private By passwordField = By.Id("password");
     private By confirmPasswordField = By.Id("password-confirmation");
@@ -18,7 +18,7 @@ public class RegistrationPage : BasePage
     private By confirmPasswordError = By.Id("password-confirmation-error");
     private By createAccountButton = By.XPath("//span[text()='Create an Account']");
     private By passwordStrength = By.Id("password-strength-meter-label");
-    private By pageErrorMessage = By.Id("//div[@class='page messages']");
+    private By pageErrorMessage = By.XPath("//div[@class='page messages']");
     public void SetFirstName(string firstName)
     {
         Set(firstNameField, firstName);

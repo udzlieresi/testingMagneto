@@ -33,9 +33,9 @@ public class AuthenticationTest : BaseTest
         string password = "test1234@";
         
         authPage.LoginInIntoApplication(email, password);
-        string actualResult = "Please enter a valid email address (Ex: johndoe@domain.com).";
+        string expectedResult = "Please enter a valid email address (Ex: johndoe@domain.com).";
         string emailErrorMessage = authPage.GetEmailErrorMessage();
-        Assert.That(actualResult, Is.EqualTo(emailErrorMessage));
+        Assert.That(expectedResult, Is.EqualTo(emailErrorMessage));
     }
 
     [Test]

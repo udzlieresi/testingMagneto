@@ -1,101 +1,74 @@
 ﻿using OpenQA.Selenium;
 using testingMagneto.Base;
-using testingMagneto.Pages.RegistrationPages;
 
-namespace testingMagneto.Pages;
+namespace testingMagneto.Pages.RegistrationPages;
 
 public class RegistrationPage : BasePage
 {
-    private By firstNameField = By.Id("firstname");
-    private By lastNameField = By.Id("lastname");
-    private By emailField = By.Id("email_address");
-    private By passwordField = By.Id("password");
-    private By confirmPasswordField = By.Id("password-confirmation");
-    private By firstNameError = By.Id("firstname-error");
-    private By lastNameError = By.Id("lastname-error");
-    private By emailError = By.Id("email_address-error");
-    private By passwordError = By.Id("password-error");
-    private By confirmPasswordError = By.Id("password-confirmation-error");
-    private By createAccountButton = By.XPath("//span[text()='Create an Account']");
-    private By passwordStrength = By.Id("password-strength-meter-label");
-    private By pageErrorMessage = By.XPath("//div[@class='page messages']");
-    public void SetFirstName(string firstName)
-    {
-        Set(firstNameField, firstName);
-    }
-
-    public void SetLastName(string lastName)
-    {
-        Set(lastNameField, lastName);
-    }
-
-    public void SetEmail(string email)
-    {
-        Set(emailField, email);
-    }
-
-    public void SetPassword(string password)
-    {
-        Set(passwordField, password);
-    }
-
-    public void SetConfirmPassword(string password)
-    {
-        Set(confirmPasswordField, password);
-    }
-
-    public HomePage ClickCreateAccountButton()
-    {
-        Click(createAccountButton);
-        return new HomePage();
-    }
-
+    public By FirstNameField { get; } = By.Id("firstname");
+    public By LastNameField { get; } = By.Id("lastname");
+    public By EmailField { get; } = By.Id("email_address");
+    public By PasswordField { get; } = By.Id("password");
+    public By ConfirmPasswordField { get; } = By.Id("password-confirmation");
+    public By FirstNameError { get; } = By.Id("firstname-error");
+    public By LastNameError { get; } = By.Id("lastname-error");
+    public By EmailError { get; } = By.Id("email_address-error");
+    public By PasswordError { get; } = By.Id("password-error");
+    public By ConfirmPasswordError { get; } = By.Id("password-confirmation-error");
+    public By CreateAccountButton { get; } = By.XPath("//span[text()='Create an Account']");
+    public By PasswordStrength { get; } = By.Id("password-strength-meter-label");
+    public By PageErrorMessage { get; } = By.XPath("//div[@class='page messages']");
+    
+    public RegistrationPage(IWebDriver driver) : base(driver) { }
+    
     public HomePage CreateAccount(string firstName, string lastName, string email, string password, string confirmPassword)
     {
-        SetFirstName(firstName);
-        SetLastName(lastName);
-        SetEmail(email);
-        SetPassword(password);
-        SetConfirmPassword(password);
-        return ClickCreateAccountButton();
+        Set(driver.FindElement(FirstNameField), firstName);
+        Set(driver.FindElement(LastNameField), lastName);
+        Set(driver.FindElement(EmailField), email);
+        Set(driver.FindElement(PasswordField), password);
+        Set(driver.FindElement(ConfirmPasswordField), confirmPassword);
+        Click(driver.FindElement(CreateAccountButton));
+        return new HomePage(driver);
     }
 
     public string GetFirstNameErrorMessage()
     {
-        return GetText(firstNameError);
+        return GetText(driver.FindElement(FirstNameError));
     }
 
     public string GetLastNameErrorMessage()
     {
-        return GetText(lastNameError);
+        return GetText(driver.FindElement(LastNameError));
     }
     
     public string GetEmailErrorMessage()
     {
-        return GetText(emailError);
+        return GetText(driver.FindElement(EmailError));
     }
 
     public string GetPasswordErrorMessage()
     {
-        return GetText(passwordError);
+        return GetText(driver.FindElement(PasswordError));
     }
+    
     public string GetConfirmPasswordErrorMessage()
     {
-        return GetText(confirmPasswordError);
+        return GetText(driver.FindElement(ConfirmPasswordError));
     } 
     
     public string GetPasswordStrength()
     {
-        return GetText(passwordStrength);
+        return GetText(driver.FindElement(PasswordStrength));
     }
 
     public IWebElement GetPasswordField()
     {
-        return Find(passwordField);
+        return driver.FindElement(PasswordField);
     }
 
     public string GetPageErrorMessage()
     {
-        return GetText(pageErrorMessage);
+        return GetText(driver.FindElement(PageErrorMessage));
     }
 }

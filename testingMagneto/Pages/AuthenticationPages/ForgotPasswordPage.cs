@@ -5,10 +5,12 @@ namespace testingMagneto.Pages.AuthenticationPages;
 
 public class ForgotPasswordPage : AuthenticationPage
 {
-    private By forgotPasswordPageHeader = By.XPath("//h1/span[text()='Forgot Your Password?']");
-
+    public By ForgotPasswordPageHeader { get; } = By.XPath("//h1/span[text()='Forgot Your Password?']");
+    
+    public ForgotPasswordPage(IWebDriver driver) : base(driver) {}
+    
     public bool IsAccountPageDisplayed()
     {
-        return Find(forgotPasswordPageHeader).Displayed;
+        return driver.FindElement(ForgotPasswordPageHeader).Displayed;
     }
 }

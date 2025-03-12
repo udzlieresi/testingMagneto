@@ -4,10 +4,12 @@ namespace testingMagneto.Pages.AuthenticationPages;
 
 public class AccountPage : AuthenticationPage
 {
-    private By accountPageHeader = By.XPath("//h1/span[@class='base']");
-
+    public By AccountPageHeader { get; } = By.XPath("//h1/span[@class='base']");
+    
+    public AccountPage(IWebDriver driver) : base(driver){}
+    
     public bool IsAccountPageDisplayed()
     {
-        return Find(accountPageHeader).Displayed;
+        return driver.FindElement(AccountPageHeader).Displayed;
     }
 }

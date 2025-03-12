@@ -2,8 +2,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using testingMagneto.Base;
-using testingMagneto.Pages;
 using testingMagneto.Pages.AuthenticationPages;
+using testingMagneto.Pages.RegistrationPages;
 
 namespace testingMagneto.Tests;
 
@@ -21,13 +21,12 @@ public class BaseTest
     [SetUp]
     public virtual void SetUp()
     {
-        driver = new ChromeDriver();
+        driver = CreateDriver.GetDriver();
         driver.Manage().Window.Maximize();
         driver.Navigate().GoToUrl(urlAuth);
         basePage = new BasePage();
-        basePage.SetDriver(driver);
         authPage = new AuthenticationPage();
-        regPage = new RegistrationPage();
+        regPage = new RegistrationPage(driver);
     }
 
     [TearDown]

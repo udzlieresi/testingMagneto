@@ -4,30 +4,25 @@ namespace testingMagneto.Base;
 
 public class BasePage
 {
-    public static IWebDriver driver;
+    protected IWebDriver driver;
 
-    public void SetDriver(IWebDriver driver)
+    public BasePage(IWebDriver driver)
     {
-        BasePage.driver = driver;
+        this.driver = driver;
     }
 
-    protected IWebElement Find(By locator)
+    public void Click(IWebElement webElement)
     {
-        return driver.FindElement(locator);
+        webElement.Click();
     }
 
-    public void Click(By locator)
+    public void Set(IWebElement webElement, string value)
     {
-        Find(locator).Click();
+        webElement.SendKeys(value);
     }
 
-    public void Set(By locator, string value)
+    public string GetText(IWebElement webElement)
     {
-        Find(locator).SendKeys(value);
-    }
-
-    public string GetText(By locator)
-    {
-        return Find(locator).Text;
+        return webElement.Text;
     }
 }

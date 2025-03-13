@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using testingMagneto.Pages.AuthenticationPages;
 
 namespace testingMagneto.Pages.AuthenticationPages;
 

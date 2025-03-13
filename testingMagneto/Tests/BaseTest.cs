@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using testingMagneto.Base;
 using testingMagneto.Pages.AuthenticationPages;
 using testingMagneto.Pages.RegistrationPages;
@@ -10,11 +9,10 @@ namespace testingMagneto.Tests;
 public class BaseTest
 {
     protected IWebDriver driver;
-    protected BasePage basePage;
-    private string urlAuth =
-        "https://magento.softwaretestingboard.com/customer/account/login/";
-    protected string urlReg =
-        "https://magento.softwaretestingboard.com/customer/account/create/";
+    
+    protected string AuthURL = "https://magento.softwaretestingboard.com/customer/account/login/";
+    protected string RegURL = "https://magento.softwaretestingboard.com/customer/account/create/";
+    
     protected AuthenticationPage authPage;
     protected RegistrationPage regPage;
     
@@ -23,15 +21,30 @@ public class BaseTest
     {
         driver = CreateDriver.GetDriver();
         driver.Manage().Window.Maximize();
-        driver.Navigate().GoToUrl(urlAuth);
-        basePage = new BasePage();
-        authPage = new AuthenticationPage();
-        regPage = new RegistrationPage(driver);
+        driver.Navigate().GoToUrl(AuthURL);
     }
 
     [TearDown]
     public void TearDown()
     {
         driver.Quit();
+    }
+
+    public RegistrationPage GetRegistrationPage()
+    {
+        if (regPage == null)
+        {
+            regPage = new RegistrationPage(driver);
+        }
+        return regPage;
+    }
+
+    public AuthenticationPage GetAuthenticationPage()
+    {
+        if (authPage == null)
+        {
+            authPage = new AuthenticationPage(driver);
+        }
+        return authPage;
     }
 }

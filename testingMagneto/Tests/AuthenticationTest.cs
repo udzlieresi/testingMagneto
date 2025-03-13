@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using testingMagneto.Pages;
 
 namespace testingMagneto.Tests;
 
@@ -11,19 +10,23 @@ public class AuthenticationTest : BaseTest
         string email = "shalvasologhashvili21@gmail.com";
         string password = "test@1234";
         
-        var accountPage = authPage.LoginInIntoApplication(email, password);
+        var accountPage = GetAuthenticationPage().LoginInIntoApplication(email, password);
+        
         Assert.That(accountPage.IsAccountPageDisplayed(), Is.True);
     }
 
     [Test]
     public void MissingFields()
     {
-        authPage.ClickLoginButton();
         string expectedResult = "This is a required field.";
-        string emailErrorMessage = authPage.GetEmailErrorMessage();
-        string passwordErrorMessage = authPage.GetPasswordErrorMessage();
-        Assert.That(expectedResult, Is.EqualTo(emailErrorMessage));
-        Assert.That(passwordErrorMessage, Is.EqualTo(emailErrorMessage));
+        
+        GetAuthenticationPage().Click(driver.FindElement(GetAuthenticationPage().LoginButton));
+        
+        string emailErrorMessage = GetAuthenticationPage().GetText(driver.FindElement(GetAuthenticationPage().EmailErrorMessage));
+        string passwordErrorMessage = GetAuthenticationPage().GetText(driver.FindElement(GetAuthenticationPage().PasswordErrorMessage));
+        
+        Assert.That(emailErrorMessage, Is.EqualTo(expectedResult));
+        Assert.That(passwordErrorMessage, Is.EqualTo(expectedResult));
     }
 
     [Test]
@@ -31,11 +34,12 @@ public class AuthenticationTest : BaseTest
     {
         string email = "test";
         string password = "test1234@";
-        
-        authPage.LoginInIntoApplication(email, password);
         string expectedResult = "Please enter a valid email address (Ex: johndoe@domain.com).";
-        string emailErrorMessage = authPage.GetEmailErrorMessage();
-        Assert.That(expectedResult, Is.EqualTo(emailErrorMessage));
+        
+        GetAuthenticationPage().LoginInIntoApplication(email, password);
+        string emailErrorMessage = GetAuthenticationPage().GetText(driver.FindElement(GetAuthenticationPage().EmailErrorMessage));
+        
+        Assert.That(emailErrorMessage, Is.EqualTo(expectedResult));
     }
 
     [Test]
@@ -43,19 +47,19 @@ public class AuthenticationTest : BaseTest
     {
         string email = "shalvasologhashvili21@gmail.com";
         string password = "testtt@1234";
-        
-        authPage.LoginInIntoApplication(email, password);
         string expectedResult = "The account sign-in was incorrect";
-        string actualResult = authPage.GetPageErrorMessage();
+
+        GetAuthenticationPage().LoginInIntoApplication(email, password);
+        string passwordErrorMessage = GetAuthenticationPage().GetText(driver.FindElement(GetAuthenticationPage().PasswordErrorMessage));
         
-        Assert.That(actualResult, Does.Contain(expectedResult));
+        Assert.That(passwordErrorMessage, Does.Contain(expectedResult));
     }
 
     [Test]
     public void ForgotPassword()
     {
-        var forgotPasswordPage = authPage.ClickForgotPasswordButton();
+        var forgotPasswordPage = GetAuthenticationPage().ClickForgotPasswordButton();
         forgotPasswordPage.IsAccountPageDisplayed();
-        Assert.That(true, Is.EqualTo(forgotPasswordPage.IsAccountPageDisplayed()));
+        Assert.That(forgotPasswordPage.IsAccountPageDisplayed(), Is.True);
     }
 }

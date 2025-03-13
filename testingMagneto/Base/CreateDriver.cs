@@ -4,15 +4,15 @@ namespace testingMagneto.Base;
 
 public class CreateDriver
 {
-    private static ChromeDriver createDriver;
+    private static ChromeDriver driver;
     private CreateDriver(){}
 
     public static ChromeDriver GetDriver()
     {
-        if (createDriver == null)
+        if (driver == null)
         {
-            createDriver = new ChromeDriver();
+            driver = new ChromeDriver();
         }
-        return createDriver;
+        return driver;
     }
 }

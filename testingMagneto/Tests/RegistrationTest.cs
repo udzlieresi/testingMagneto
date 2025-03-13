@@ -1,9 +1,5 @@
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
-using testingMagneto.Base;
-using testingMagneto.Pages;
-using testingMagneto.Pages.AuthenticationPages;
-using testingMagneto.Pages.RegistrationPages;
 
 namespace testingMagneto.Tests;
 
@@ -14,41 +10,46 @@ public class RegistrationTest : BaseTest
     {
         driver = new ChromeDriver();
         driver.Manage().Window.Maximize();
-        driver.Navigate().GoToUrl(urlReg);
-        basePage = new BasePage();
-        basePage.SetDriver(driver);
-        authPage = new AuthenticationPage();
-        regPage = new RegistrationPage();
+        driver.Navigate().GoToUrl(RegURL);
     }
+    
     [Test]
     public void MissingAllFieldsExceptOne()
     {
         string email = "test@gmail.com";
+        string expectedResult = "This is a required field.";
         
-        regPage.SetEmail(email);
-        regPage.ClickCreateAccountButton();
-        Assert.That(regPage.GetFirstNameErrorMessage(), Is.EqualTo("This is a required field."));
-        Assert.That(regPage.GetLastNameErrorMessage(), Is.EqualTo("This is a required field."));
-        Assert.That(regPage.GetPasswordErrorMessage(), Is.EqualTo("This is a required field."));
-        Assert.That(regPage.GetConfirmPasswordErrorMessage(), Is.EqualTo("This is a required field."));
+        GetRegistrationPage().Set(driver.FindElement(GetRegistrationPage().EmailField), email);
+        GetRegistrationPage().Click(driver.FindElement(GetRegistrationPage().CreateAccountButton));
+        
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().FirstNameError)), Is.EqualTo(expectedResult));
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().LastNameError)), Is.EqualTo(expectedResult));
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().PasswordError)), Is.EqualTo(expectedResult));
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().ConfirmPasswordField)), Is.EqualTo(expectedResult));
     }
 
     [Test]
     public void InvalidEmail()
     {
         string email = "test";
-        regPage.SetEmail(email);
-        regPage.ClickCreateAccountButton();
-        Assert.That(regPage.GetEmailErrorMessage(), Does.Contain("Please enter a valid email address"));
+        string expectedResult = "Please enter a valid email address";
+        
+        GetRegistrationPage().Set(driver.FindElement(GetRegistrationPage().EmailField), email);
+        GetRegistrationPage().Click(driver.FindElement(GetRegistrationPage().CreateAccountButton));
+       
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().EmailError)), Does.Contain(expectedResult));
     }
 
     [Test]
     public void PasswordStrength()
     {
         string password = "test1234@";
-        regPage.SetPassword(password);
-        regPage.ClickCreateAccountButton();
-        Assert.That(regPage.GetPasswordStrength(), Does.Contain("Strong"));
+        string expectedResult = "Strong";
+        
+        GetRegistrationPage().Set(driver.FindElement(GetRegistrationPage().PasswordField), password);
+        GetRegistrationPage().Click(driver.FindElement(GetRegistrationPage().CreateAccountButton));
+        
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().PasswordStrength)), Does.Contain(expectedResult));
     }
 
     [Test]
@@ -56,47 +57,63 @@ public class RegistrationTest : BaseTest
     {
         string password = "test1234@";
         string confirmPassword = "test1234";
+        string expectedResult = "Please enter the same value again.";
         
-        regPage.SetPassword(password);
-        regPage.SetConfirmPassword(confirmPassword);
-        regPage.ClickCreateAccountButton();
-        Assert.That(regPage.GetConfirmPasswordErrorMessage(), Is.EqualTo("Please enter the same value again."));
+        GetRegistrationPage().Set(driver.FindElement(GetRegistrationPage().PasswordField), password);
+        GetRegistrationPage().Set(driver.FindElement(GetRegistrationPage().ConfirmPasswordField), confirmPassword);
+        GetRegistrationPage().Click(driver.FindElement(GetRegistrationPage().CreateAccountButton));
+        
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().ConfirmPasswordError)), Is.EqualTo(expectedResult));
     }
 
     [Test]
     public void InvalidPassword()
     {
         string password = "test1234";
-        regPage.SetPassword(password);
-        regPage.ClickCreateAccountButton();
-        Assert.That(regPage.GetPasswordErrorMessage(), Does.Contain("Minimum of different classes of characters in password is 3."));
+        string expectedResult = "Minimum of different classes of characters in password is 3.";
+        
+        GetRegistrationPage().Set(driver.FindElement(GetRegistrationPage().PasswordField), password);
+        GetRegistrationPage().Click(driver.FindElement(GetRegistrationPage().CreateAccountButton));
+        
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().PasswordError)), Does.Contain(expectedResult));
     }
 
     [Test]
     public void MinimumPasswordLength()
     {
         string password = "test";
-        regPage.SetPassword(password);
-        regPage.ClickCreateAccountButton();
-        Assert.That(regPage.GetPasswordErrorMessage(), Does.Contain("Minimum length of this field must be equal or greater than 8 symbols."));
+        string expectedResult = "Minimum length of this field must be equal or greater than 8 symbols.";
+   
+        GetRegistrationPage().Set(driver.FindElement(GetRegistrationPage().PasswordField), password);
+        GetRegistrationPage().Click(driver.FindElement(GetRegistrationPage().CreateAccountButton));
+        
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().PasswordError)), Does.Contain(expectedResult));
     }
 
     [Test]
     public void PasswordIsHidden()
     {
         string password = "test@1234";
-        regPage.SetPassword(password);
-        var passwordField = regPage.GetPasswordField();
-        string passwordFieldType = passwordField.GetAttribute("type");
-        Assert.That(passwordFieldType, Is.EqualTo("password"));
+        string expectedResult = "password";
+
+        GetRegistrationPage().Set(driver.FindElement(GetRegistrationPage().PasswordField), password);
+        string passwordFieldType = GetRegistrationPage().GetAttribute(driver.FindElement(GetRegistrationPage().PasswordField), "type");
+        
+        Assert.That(passwordFieldType, Is.EqualTo(expectedResult));
     }
 
     [Test]
     public void AlreadyRegisteredEmail()
     {
-        regPage.CreateAccount(
-            "test", "test", "shalvasologhashvili21@gmail.com",
-            "test@1234", "test@1234");
-        Assert.That(regPage.GetPageErrorMessage(), Does.Contain("There is already an account with this email address."));
+        string firstName = "test";
+        string lastName = "test";
+        string email = "shalvasologhashvili21@gmail.com";
+        string password = "test@1234";
+        string confirmPassword = "test@1234";
+        string expectedResult = "There is already an account with this email address.";
+        
+        GetRegistrationPage().CreateAccount(firstName, lastName, email, password, confirmPassword);
+        
+        Assert.That(GetRegistrationPage().GetText(driver.FindElement(GetRegistrationPage().PageErrorMessage)), Does.Contain(expectedResult));
     }
 }

@@ -24,21 +24,6 @@ public class AuthenticationPage : BasePage
         return new AccountPage(driver);
     }
 
-    public string GetEmailErrorMessage()
-    {
-        return GetText(driver.FindElement(EmailErrorMessage));
-    }
-
-    public string GetPasswordErrorMessage()
-    {
-        return GetText(driver.FindElement(PasswordErrorMessage));
-    }
-
-    public string GetPageErrorMessage()
-    {
-        return GetText(driver.FindElement(PageErrorMessage));
-    }
-
     public ForgotPasswordPage ClickForgotPasswordButton()
     {
         Click(driver.FindElement(ForgotPasswordButton));

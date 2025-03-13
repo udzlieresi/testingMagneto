@@ -25,4 +25,9 @@ public class BasePage
     {
         return webElement.Text;
     }
+
+    public string GetAttribute(IWebElement webElement, string attributeName)
+    {
+        return webElement.GetAttribute(attributeName);
+    }
 }

@@ -31,44 +31,4 @@ public class RegistrationPage : BasePage
         Click(driver.FindElement(CreateAccountButton));
         return new HomePage(driver);
     }
-
-    public string GetFirstNameErrorMessage()
-    {
-        return GetText(driver.FindElement(FirstNameError));
-    }
-
-    public string GetLastNameErrorMessage()
-    {
-        return GetText(driver.FindElement(LastNameError));
-    }
-    
-    public string GetEmailErrorMessage()
-    {
-        return GetText(driver.FindElement(EmailError));
-    }
-
-    public string GetPasswordErrorMessage()
-    {
-        return GetText(driver.FindElement(PasswordError));
-    }
-    
-    public string GetConfirmPasswordErrorMessage()
-    {
-        return GetText(driver.FindElement(ConfirmPasswordError));
-    } 
-    
-    public string GetPasswordStrength()
-    {
-        return GetText(driver.FindElement(PasswordStrength));
-    }
-
-    public IWebElement GetPasswordField()
-    {
-        return driver.FindElement(PasswordField);
-    }
-
-    public string GetPageErrorMessage()
-    {
-        return GetText(driver.FindElement(PageErrorMessage));
-    }
 }

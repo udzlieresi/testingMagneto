@@ -10,6 +10,8 @@ public class ForgotPasswordPage : AuthenticationPage
     
     public bool IsAccountPageDisplayed()
     {
-        return driver.FindElement(ForgotPasswordPageHeader).Displayed;
+        IWebElement element =
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(ForgotPasswordPageHeader));
+        return element.Displayed;
     }
 }

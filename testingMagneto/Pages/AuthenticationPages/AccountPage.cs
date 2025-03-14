@@ -10,6 +10,8 @@ public class AccountPage : AuthenticationPage
     
     public bool IsAccountPageDisplayed()
     {
-        return driver.FindElement(AccountPageHeader).Displayed;
+        IWebElement element =
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(AccountPageHeader));
+        return element.Displayed;
     }
 }

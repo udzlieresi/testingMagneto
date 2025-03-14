@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ueQv/xnbUyY=",
+  "dgSpecHash": "OAQypCEKn/Y=",
   "success": true,
   "projectFilePath": "/Users/user/testing/testingMagneto/testingMagneto/testingMagneto.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "/Users/user/.nuget/packages/selenium.support/4.29.0/selenium.support.4.29.0.nupkg.sha512",
     "/Users/user/.nuget/packages/selenium.webdriver/4.29.0/selenium.webdriver.4.29.0.nupkg.sha512",
     "/Users/user/.nuget/packages/selenium.webdriver.chromedriver/135.0.7049.300-beta/selenium.webdriver.chromedriver.135.0.7049.300-beta.nupkg.sha512",
+    "/Users/user/.nuget/packages/seleniumextras.waithelpers/1.0.2/seleniumextras.waithelpers.1.0.2.nupkg.sha512",
     "/Users/user/.nuget/packages/system.diagnostics.diagnosticsource/5.0.0/system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.io.pipelines/10.0.0-preview.1.25080.5/system.io.pipelines.10.0.0-preview.1.25080.5.nupkg.sha512",
     "/Users/user/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
